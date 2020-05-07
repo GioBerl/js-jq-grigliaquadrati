@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+.griglia {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+}
+
+.quadrato {
+    width: calc(100% / 5);
+    height: calc(100% / 5);
+    float: left;
+    border: 1px solid rgba(255, 30, 0, 0.363);
+    color: white;
+    position: relative;
+}
+
+p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.rosso {
+    color: red;
+}
+
+.nero {
+    color: black;
+}
+
+.verde {
+    color: green;
+}
