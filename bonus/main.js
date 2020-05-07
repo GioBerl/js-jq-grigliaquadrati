@@ -7,12 +7,7 @@
 $(".container").append(`<div class="griglia"></div>`);
 
 //GENERO I QUADRATI DENTRO LA GRIGLIA
-for (var index = 0; index < 25; index++) {
-    $(".griglia").append(`<div class="quadrato"></div>`);
-}
-
-//per ogni quadrato, genero, e poi inserisco un numero random
-$(".quadrato").each(function () {
+for (var i = 0; i < 25; i++) {
     var random = generaRandom(0, 10);
     if (random % 2 == 0 && random != 0) {
         var classe = "rosso";
@@ -22,8 +17,24 @@ $(".quadrato").each(function () {
         var classe = "verde";
     }
 
-    $(this).html(`<p>${random}</p>`).addClass(classe);
-});
+    $(".griglia").append(
+        `<div class="quadrato"><p class='${classe}'>${random}</p></div>`
+    );
+}
+
+//per ogni quadrato, genero, e poi inserisco un numero random
+// $(".quadrato").each(function () {
+//     var random = generaRandom(0, 10);
+//     if (random % 2 == 0 && random != 0) {
+//         var classe = "rosso";
+//     } else if (random % 2 != 0) {
+//         var classe = "nero";
+//     } else {
+//         var classe = "verde";
+//     }
+
+//     $(this).html(`<p>${random}</p>`).addClass(classe);
+// });
 
 function generaRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
